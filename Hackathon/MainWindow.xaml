@@ -1,0 +1,63 @@
+﻿<Window x:Class="Hackathon.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hackathon"
+        xmlns:uc="clr-namespace:Hackathon.UserControls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1100">
+    <Grid  Margin="20">
+
+        <Border BorderThickness="1" BorderBrush="Gray" Padding="0 10 0 10">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock FontWeight="Bold" Grid.Column="0" Text="Tableau de bord des Formulaires"></TextBlock>
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" >
+                        <TextBlock Text="Bonjour, " FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="AISSAT Thanina" FontWeight="Bold"></TextBlock>
+                    </StackPanel>
+                </Grid>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 0 0 10">
+                    <Image  Height="17" Width="17" HorizontalAlignment="Left" >
+                        <Image.Source>
+                            <BitmapImage DecodePixelWidth="200"  UriSource="Content/Images/Help.png" />
+                        </Image.Source>
+                    </Image>
+                    <TextBlock Text=" Aide"></TextBlock>
+                </StackPanel>
+
+                <TabControl Grid.Row="2" TabStripPlacement="Bottom" BorderThickness="0 0 0 1">
+                    <TabItem Header="Accueil">
+                        <uc:AcceuilView></uc:AcceuilView>
+                    </TabItem>
+                    <TabItem Header="Archives" >
+                        <uc:ArchivesView></uc:ArchivesView>
+                    </TabItem>
+                    <TabItem Header="Mentions" >
+                        <uc:MentionsView></uc:MentionsView>
+                    </TabItem>
+                    <TabItem Header="Confirmation">
+                        <uc:ConfirmationView></uc:ConfirmationView>
+                    </TabItem>
+                    <TabItem Header="Clôture" >
+                        <uc:ClotureView></uc:ClotureView>
+                    </TabItem>
+                </TabControl>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
