@@ -22,31 +22,7 @@ namespace Hackathon.UserControls
     {
         public AcceuilView()
         {
-            InitializeComponent();
-
-            datagrid.ItemsSource = new[] {
-                new {
-                    Titre = "Titre 1",
-                },
-                 new {
-                    Titre = "Titre 2",
-                },
-                  new {
-                    Titre = "Titre 3",
-                },
-                   new {
-                    Titre = "Titre 4",
-                },
-                    new {
-                    Titre = "Titre 5",
-                },
-                     new {
-                    Titre = "Titre 6",
-                },
-                      new {
-                    Titre = "Titre 7",
-                }
-            };
+            InitializeComponent();          
         }
     }
 }

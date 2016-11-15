@@ -70,6 +70,8 @@
     <Compile Include="UserControls\MentionsView.xaml.cs">
       <DependentUpon>MentionsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AccueilViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -130,10 +132,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Content\Images\Copy.png" />
+    <Resource Include="Content\Images\link.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Content\Images\Add_New.png" />
     <Resource Include="Content\Images\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FakeServiceWeb\FakeServiceWeb.csproj">
+      <Project>{be4ab948-1221-48a6-9cf5-f04aa3552eed}</Project>
+      <Name>FakeServiceWeb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hackathon.Domain\Hackathon.Domain.csproj">
+      <Project>{517b2c95-7dcf-4b6a-81c8-0716f5b94822}</Project>
+      <Name>Hackathon.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -52,7 +52,6 @@
                         <uc:ClotureView></uc:ClotureView>
                     </TabItem>
                 </TabControl>
-
             </Grid>
         </Border>
     </Grid>

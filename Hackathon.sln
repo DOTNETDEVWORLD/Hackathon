@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackathon", "Hackathon\Hackathon.csproj", "{7CD3F5B8-1A71-4651-A151-A82693653150}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackathon.Domain", "Hackathon.Domain\Hackathon.Domain.csproj", "{517B2C95-7DCF-4B6A-81C8-0716F5B94822}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeServiceWeb", "FakeServiceWeb\FakeServiceWeb.csproj", "{BE4AB948-1221-48A6-9CF5-F04AA3552EED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{7CD3F5B8-1A71-4651-A151-A82693653150}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CD3F5B8-1A71-4651-A151-A82693653150}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CD3F5B8-1A71-4651-A151-A82693653150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{517B2C95-7DCF-4B6A-81C8-0716F5B94822}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{517B2C95-7DCF-4B6A-81C8-0716F5B94822}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{517B2C95-7DCF-4B6A-81C8-0716F5B94822}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{517B2C95-7DCF-4B6A-81C8-0716F5B94822}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE4AB948-1221-48A6-9CF5-F04AA3552EED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4AB948-1221-48A6-9CF5-F04AA3552EED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4AB948-1221-48A6-9CF5-F04AA3552EED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4AB948-1221-48A6-9CF5-F04AA3552EED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
