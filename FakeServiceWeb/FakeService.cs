@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FakeServiceWeb
 {
-    public class FakeWebService
+    public class FakeService
     {
         public List<Formulaire> GetFormulaires()
         {

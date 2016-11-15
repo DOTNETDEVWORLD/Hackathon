@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\Command.cs" />
     <Compile Include="UserControls\AcceuilView.xaml.cs">
       <DependentUpon>AcceuilView.xaml</DependentUpon>
     </Compile>
@@ -149,6 +150,9 @@
       <Project>{517b2c95-7dcf-4b6a-81c8-0716f5b94822}</Project>
       <Name>Hackathon.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\Supprimer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

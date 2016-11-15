@@ -10,6 +10,8 @@
     <UserControl.DataContext>
         <vm:AccueilViewModel/>
     </UserControl.DataContext>
+
+    
     
     <Grid>
         <Grid.RowDefinitions>
@@ -47,30 +49,25 @@
                 <DataGridTemplateColumn Header="Birthday" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <Button Grid.Column="0" Content="1"></Button>
-                                <Button Grid.Column="1" Content="2"></Button>
-                                <Button Grid.Column="2" Content="3"></Button>
-                                <Button Grid.Column="3" Content="4"></Button>
-                                <Button Grid.Column="4" Content="5"></Button>
-                                <Button Grid.Column="5" Content="6"></Button>
-                                <Button Grid.Column="6" Content="7"></Button>
-                            </Grid>
+                            <StackPanel Orientation="Horizontal">
+                                
+                                <Button Content="1"></Button>
+                                <Button Content="2"></Button>
+                                <Button Content="3"></Button>
+                                <Button Content="4"></Button>
+                                <Button Content="5"></Button>
+                                <Button Content="6"></Button>
+                                <Button Style="{StaticResource DeleteBtn}" 
+                                        Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.SupprimerFormulaireCommand}" 
+                                        CommandParameter="{Binding}"></Button>
+                            </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
             </DataGrid.Columns>
-        </DataGrid>
+        </DataGrid>       
 
     </Grid>
+    
 </UserControl>
