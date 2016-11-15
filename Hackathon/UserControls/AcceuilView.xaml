@@ -12,8 +12,7 @@
             <RowDefinition></RowDefinition>           
         </Grid.RowDefinitions>
 
-        <Button HorizontalAlignment="Left" Grid.Row="0" Width="120" Content="Nouveau formaulaire">         
-        </Button>
+        <Button Style="{StaticResource AddNewForm}" HorizontalAlignment="Left" Grid.Row="0"  Content="Nouveau formaulaire"> </Button>
 
         <DataGrid Grid.Row="1" AutoGenerateColumns="False" Name="datagrid">
             <DataGrid.Columns>

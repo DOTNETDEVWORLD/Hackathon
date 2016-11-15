@@ -4,6 +4,64 @@
              xmlns:local="clr-namespace:Hackathon"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="HelpButton" TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Grid>
+                                <Ellipse Name="ellipse" Width="18" Height="18">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="Content/Images/help.png" />
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ellipse" Property="Stroke" Value="Green"></Setter>
+                                    <Setter TargetName="ellipse" Property="StrokeThickness" Value="1"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+
+        <Style x:Key="AddNewForm" TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Border Padding="1" BorderBrush="Gray" BorderThickness="1" Name="Bor">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Width="18" Height="18" Grid.Column="0">
+                                        <Rectangle.Fill>
+                                            <ImageBrush ImageSource="Content/Images/Add_new.png" />
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                    <TextBlock Grid.Column="1" Text=" Nouveau Formulaire"></TextBlock>
+                                </Grid>                              
+                                 
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Bor" Property="BorderBrush" Value="Black"></Setter>
+                                    <Setter TargetName="Bor" Property="BorderThickness" Value="1"></Setter>
+                                </Trigger>                               
+                                
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+
+
     </Application.Resources>
 </Application>
