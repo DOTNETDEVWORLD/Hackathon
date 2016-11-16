@@ -22,7 +22,8 @@ namespace FakeServiceWeb
                     Reponses = new List<Reponse>()
                     {
                         new Reponse(), new Reponse (), new Reponse()
-                    }
+                    },
+                    Statut = new Statut() { Id = 1, Code = CodeStatut.CLO, Libelle = "Cloturé" }                    
                 },
 
                 new Formulaire()
@@ -31,7 +32,7 @@ namespace FakeServiceWeb
                     Titre = "Titre 02",
                     DateCreation = new DateTime(2016,05,01),
                     DateMaj = new DateTime(2016,11,11),
-
+                    Statut = new Statut() { Id = 1, Code = CodeStatut.VAL, Libelle = "Validé" }
                 },
 
                 new Formulaire()
@@ -43,7 +44,8 @@ namespace FakeServiceWeb
                     Reponses = new List<Reponse>()
                     {
                         new Reponse(), new Reponse()
-                    }
+                    },
+                    Statut = new Statut() { Id = 1, Code = CodeStatut.ECR, Libelle = "En cours" }
                 }
             };
         }

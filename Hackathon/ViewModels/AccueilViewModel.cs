@@ -27,27 +27,61 @@ namespace Hackathon.ViewModels
             get
             {
                 return formulaires ?? (formulaires = new ObservableCollection<Formulaire>(fakeWebService.GetFormulaires()));
-            }
-            //set
-            //{
-            //    formulaires = value;
-            //    NotifyPropertyChanged();
-            //}
+            }          
         }      
 
         public ICommand SupprimerFormulaireCommand
         {
             get
             {
-                return new Command(supprimerFormulaire);
+                return new Command<Formulaire>(supprimerFormulaire);
             }
         }
 
-        private void supprimerFormulaire(object parameter)
-        {
-            var formulaireToDelete = parameter as Formulaire;
 
+        public ICommand ValiderFormulaireCommand
+        {
+            get
+            {
+                return new Command<Formulaire>(validerFormulaire);
+            }
+        }
+
+        public ICommand ArchiverFormulaireCommand
+        {
+            get
+            {
+                return new Command<Formulaire>(archiverFormulaire);
+            }
+        }
+
+        public ICommand CloturerFormulaireCommand
+        {
+            get
+            {
+                return new Command<Formulaire>(cloturerFormulaire);
+            }
+        }
+
+        private void supprimerFormulaire(Formulaire formulaireToDelete)
+        {
             Formulaires.Remove(formulaireToDelete);
+        }
+
+        private void archiverFormulaire(Formulaire formulaireToArchive)
+        {
+            formulaireToArchive.Statut = new Statut() { Id = 4, Code = CodeStatut.ARC, Libelle = "Archivé" };
+            Formulaires.Remove(formulaireToArchive);
+        }
+
+        private void validerFormulaire(Formulaire formulaireToValidate)
+        {
+            formulaireToValidate.Statut = new Statut() { Id = 2, Code = CodeStatut.VAL, Libelle = "Validé" };
+        }
+
+        private void cloturerFormulaire(Formulaire formulaireToClose)
+        {
+            formulaireToClose.Statut = new Statut() { Id = 3, Code = CodeStatut.CLO, Libelle = "Cloturé" };
         }
     }
 }

@@ -7,13 +7,13 @@ using System.Windows.Input;
 
 namespace Hackathon.Commands
 {
-    public class Command : ICommand
+    public class Command<T> : ICommand
     {
         public event EventHandler CanExecuteChanged;         
 
-        private Action<object> action;
+        private Action<T> action;
 
-        public Command(Action<object> action)
+        public Command(Action<T> action)
         {
             this.action = action;
         }
@@ -25,7 +25,7 @@ namespace Hackathon.Commands
 
         public void Execute(object parameter)
         {
-            action(parameter);
+            action((T)parameter);
         }
     }
 }

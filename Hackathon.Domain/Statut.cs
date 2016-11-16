@@ -1,17 +1,19 @@
 ﻿namespace Hackathon.Domain
 {
-    public class Statut
+    public class Statut 
     {
         public long Id { get; set; }
 
-        public Etat Libelle { get; set; }        
+        public CodeStatut Code { get; set; }
+
+        public string Libelle { get; set; }        
     }
 
-    public enum Etat
+    public enum CodeStatut
     {
-        EnCours,
-        Valide, 
-        Publie,
-        Cloture
+        ECR,
+        VAL,         
+        CLO,
+        ARC
     }
 }

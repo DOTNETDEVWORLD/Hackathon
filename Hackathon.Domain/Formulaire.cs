@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Hackathon.Domain
 {
-    public class Formulaire
+    public class Formulaire : NotificationObject
     {
         public Formulaire()
         {
-            //Reponses = new HashSet<Reponse>();
+            Reponses = new HashSet<Reponse>();
         }
 
         public long Id { get; set; }
@@ -25,7 +25,19 @@ namespace Hackathon.Domain
 
         public Utilisateur Utilisateur { get; set; }
 
-        public Statut Statut { get; set; }
+        private Statut statut;
+        public Statut Statut
+        {
+            get
+            {
+                return statut;
+            }
+            set
+            {
+                statut = value;
+                NotifyPropertyChange();
+            }
+        }
 
         public ICollection<Reponse> Reponses { get; set; }
 
