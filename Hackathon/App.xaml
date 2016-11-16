@@ -158,5 +158,194 @@
         </Style>
 
 
+        <Style x:Key="DuplicateBtn" TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Border Padding="1" BorderBrush="Gray" BorderThickness="1" Name="Bor">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Width="18" Height="18" Grid.Column="0">
+                                        <Rectangle.Fill>
+                                            <ImageBrush ImageSource="Content/Images/duplicate.png" />
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                </Grid>
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Bor" Property="BorderBrush" Value="Black"></Setter>
+                                    <Setter TargetName="Bor" Property="BorderThickness" Value="1"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+
+
+        <Style x:Key="ArchiveBtn" TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Border Padding="1" BorderBrush="Gray" BorderThickness="1" Name="Bor">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Width="18" Height="18" Grid.Column="0">
+                                        <Rectangle.Fill>
+                                            <ImageBrush ImageSource="Content/Images/archive.png" />
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                </Grid>
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Bor" Property="BorderBrush" Value="Black"></Setter>
+                                    <Setter TargetName="Bor" Property="BorderThickness" Value="1"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+
+        <Style x:Key="EditBtn" TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Border Padding="1" BorderBrush="Gray" BorderThickness="1" Name="Bor">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Width="18" Height="18" Grid.Column="0">
+                                        <Rectangle.Fill>
+                                            <ImageBrush ImageSource="Content/Images/Edit.png" />
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                </Grid>
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Bor" Property="BorderBrush" Value="Black"></Setter>
+                                    <Setter TargetName="Bor" Property="BorderThickness" Value="1"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+
+
+        <Style x:Key="CloseBtn" TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Border Padding="1" BorderBrush="Gray" BorderThickness="1" Name="Bor">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Width="18" Height="18" Grid.Column="0">
+                                        <Rectangle.Fill>
+                                            <ImageBrush ImageSource="Content/Images/Cloturer.png" />
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                </Grid>
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Bor" Property="BorderBrush" Value="Black"></Setter>
+                                    <Setter TargetName="Bor" Property="BorderThickness" Value="1"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+
+        <Style x:Key="PublishBtn" TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Border Padding="1" BorderBrush="Gray" BorderThickness="1" Name="Bor">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Width="18" Height="18" Grid.Column="0">
+                                        <Rectangle.Fill>
+                                            <ImageBrush ImageSource="Content/Images/publish.jpg" />
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                </Grid>
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Bor" Property="BorderBrush" Value="Black"></Setter>
+                                    <Setter TargetName="Bor" Property="BorderThickness" Value="1"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+
+        <Style x:Key="ValidateBtn" TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Border Padding="1" BorderBrush="Gray" BorderThickness="1" Name="Bor">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Width="18" Height="18" Grid.Column="0">
+                                        <Rectangle.Fill>
+                                            <ImageBrush ImageSource="Content/Images/Validate.png" />
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                </Grid>
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Bor" Property="BorderBrush" Value="Black"></Setter>
+                                    <Setter TargetName="Bor" Property="BorderThickness" Value="1"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+
+
     </Application.Resources>
 </Application>

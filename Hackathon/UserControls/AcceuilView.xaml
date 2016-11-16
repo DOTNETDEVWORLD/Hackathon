@@ -10,54 +10,61 @@
     <UserControl.DataContext>
         <vm:AccueilViewModel/>
     </UserControl.DataContext>
-
-    
-    
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>           
-            <RowDefinition></RowDefinition>           
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Button Style="{StaticResource AddNewForm}" HorizontalAlignment="Left" Grid.Row="0"  Content="Nouveau formaulaire"> </Button>
+        <Button Style="{StaticResource AddNewForm}" HorizontalAlignment="Left" Grid.Row="0"  Content="Nouveau formaulaire"></Button>
 
-        <DataGrid Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding Formulaires}" IsReadOnly="True">
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding Formulaires}" IsReadOnly="True" Name="myDataGrid">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Titre du formaulaire" Binding="{Binding Titre}" />
-                
+
                 <DataGridTemplateColumn Header="Lien du formulaire">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <Button Style="{StaticResource Copy}" Grid.Column="0" Content="1"></Button>
-                                <Button Style="{StaticResource Link}" Grid.Column="1" Content="2"></Button>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Style="{StaticResource Copy}" Grid.Column="0" ></Button>
+                                    <Button Style="{StaticResource Link}" Grid.Column="1" ></Button>
+                                </StackPanel>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTextColumn Header="Date de création" Binding="{Binding DateCreation}" />
-                <DataGridTextColumn Header="Date de modification" Binding="{Binding DateMaj}" />
+                <DataGridTextColumn Header="Date de création" Binding="{Binding DateCreation, StringFormat={}{0:dd/MM/yyyy}}"  />
+                <DataGridTextColumn Header="Date de modification" Binding="{Binding DateMaj, StringFormat={}{0:dd/MM/yyyy}}" />
                 <DataGridTextColumn Header="Auteur" Binding="{Binding Utilisateur}" />
                 <DataGridTextColumn Header="Statut" Binding="{Binding Statut.Libelle}" />
-                <DataGridTextColumn Header="Nombre de réponses" Binding="{Binding Reponses.Count}" />                           
+                <DataGridTextColumn Header="Nombre de réponses" Binding="{Binding Reponses.Count}" />
 
                 <DataGridTemplateColumn Header="Birthday" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                
-                                <Button Content="1"></Button>
-                                <Button Content="2"></Button>
-                                <Button Content="3"></Button>
-                                <Button Content="4"></Button>
-                                <Button Content="5"></Button>
-                                <Button Content="6"></Button>
-                                <Button Style="{StaticResource DeleteBtn}" 
+
+                                <Button Style="{StaticResource EditBtn}" Visibility="{Binding Statut}" 
+                                        Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.EditerFormulaireCommand}" 
+                                        CommandParameter="{Binding}"></Button>
+                                <Button Style="{StaticResource ValidateBtn}" Visibility="{Binding Statut}" 
+                                        Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.CaliderFormulaireCommand}" 
+                                        CommandParameter="{Binding}"></Button>
+                                <Button Style="{StaticResource CloseBtn}" Visibility="{Binding Statut}"
+                                         Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.CloturerFormulaireCommand}" 
+                                        CommandParameter="{Binding}"></Button>
+                                <Button Style="{StaticResource PublishBtn}" Visibility="{Binding Statut}"
+                                         Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.PublierFormulaireCommand}" 
+                                        CommandParameter="{Binding}"></Button>
+                                <Button Style="{StaticResource DuplicateBtn}" Visibility="{Binding Statut}" 
+                                         Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.DupliquerFormulaireCommand}" 
+                                        CommandParameter="{Binding}"></Button>
+                                <Button Style="{StaticResource ArchiveBtn}" Visibility="{Binding Statut}" 
+                                         Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.ArchiverFormulaireCommand}" 
+                                        CommandParameter="{Binding}"></Button>
+                                <Button Style="{StaticResource DeleteBtn}" Visibility="{Binding Statut}"
                                         Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.SupprimerFormulaireCommand}" 
                                         CommandParameter="{Binding}"></Button>
                             </StackPanel>
@@ -66,8 +73,8 @@
                 </DataGridTemplateColumn>
 
             </DataGrid.Columns>
-        </DataGrid>       
+        </DataGrid>
 
     </Grid>
-    
+
 </UserControl>

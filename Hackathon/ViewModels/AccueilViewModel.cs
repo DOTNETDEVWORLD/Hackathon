@@ -28,20 +28,12 @@ namespace Hackathon.ViewModels
             {
                 return formulaires ?? (formulaires = new ObservableCollection<Formulaire>(fakeWebService.GetFormulaires()));
             }
-            set
-            {
-                formulaires = value;
-                NotifyPropertyChanged();
-            }
-        }
-
-        public ICommand TestCommand
-        {
-            get
-            {
-                return new Command(supprimerFormulaire);
-            }
-        }
+            //set
+            //{
+            //    formulaires = value;
+            //    NotifyPropertyChanged();
+            //}
+        }      
 
         public ICommand SupprimerFormulaireCommand
         {

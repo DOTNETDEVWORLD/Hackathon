@@ -4,7 +4,14 @@
     {
         public long Id { get; set; }
 
-        public string Libelle { get; set; }
+        public Etat Libelle { get; set; }        
+    }
 
+    public enum Etat
+    {
+        EnCours,
+        Valide, 
+        Publie,
+        Cloture
     }
 }
