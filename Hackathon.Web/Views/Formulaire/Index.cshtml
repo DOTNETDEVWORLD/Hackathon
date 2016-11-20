@@ -13,21 +13,20 @@
 </head>
 <body>
     <script src="~/Scripts/jquery-3.1.1.js"></script>
+
     <div id="PageContainer">
         @{
             Html.RenderAction("FormulairePage");
         }
-</div>
+    </div>
 
     <script type="text/javascript">
-
         $(document).ready(function () {
             $("#ddlCategory").change(function () {
                 var categoryId = $("#ddlCategory").val();
                 //$("#dvCategoryResults").load();
             });
         });
-
     </script>
 </body>
 </html>
