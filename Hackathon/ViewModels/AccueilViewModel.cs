@@ -1,6 +1,7 @@
 ﻿using FakeServiceWeb;
 using Hackathon.Commands;
 using Hackathon.Domain;
+using Hackathon.ServiceHackathon;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,18 +16,20 @@ namespace Hackathon.ViewModels
     {
         private ObservableCollection<Formulaire> formulaires;
 
-        private FakeService fakeWebService;
+        private ServiceHackathonClient fakeWebService;
 
         public AccueilViewModel()
         {
-            fakeWebService = new FakeService();
+            fakeWebService = new ServiceHackathonClient();
+
+            CompositeType tt = fakeWebService.GetDataUsingDataContract(new CompositeType());
         }
 
         public ObservableCollection<Formulaire> Formulaires
         {
             get
             {
-                return formulaires ?? (formulaires = new ObservableCollection<Formulaire>(fakeWebService.GetFormulaires()));
+                return formulaires ?? (formulaires = new ObservableCollection<Formulaire>());
             }          
         }      
 

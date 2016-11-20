@@ -11,6 +11,7 @@ namespace Hackathon.Domain
         public Formulaire()
         {
             Reponses = new HashSet<Reponse>();
+            Pages = new List<Page>();
         }
 
         public long Id { get; set; }
@@ -39,7 +40,9 @@ namespace Hackathon.Domain
             }
         }
 
-        public ICollection<Reponse> Reponses { get; set; }
+       public ICollection<Reponse> Reponses { get; set; }
+
+        public ICollection<Page> Pages { get; set; }
 
     }
 }

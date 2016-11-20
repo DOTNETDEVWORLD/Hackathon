@@ -4,10 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackathon", "Hackathon\Hackathon.csproj", "{7CD3F5B8-1A71-4651-A151-A82693653150}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B702AF81-5943-4CA9-972E-526F110EEFF1} = {B702AF81-5943-4CA9-972E-526F110EEFF1}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackathon.Domain", "Hackathon.Domain\Hackathon.Domain.csproj", "{517B2C95-7DCF-4B6A-81C8-0716F5B94822}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeServiceWeb", "FakeServiceWeb\FakeServiceWeb.csproj", "{BE4AB948-1221-48A6-9CF5-F04AA3552EED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackathon.Service", "Hackathon.Service\Hackathon.Service.csproj", "{B702AF81-5943-4CA9-972E-526F110EEFF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackathon.Web", "Hackathon.Web\Hackathon.Web.csproj", "{A37FEED1-CE17-408C-BF4D-561000B51411}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +34,14 @@ Global
 		{BE4AB948-1221-48A6-9CF5-F04AA3552EED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE4AB948-1221-48A6-9CF5-F04AA3552EED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE4AB948-1221-48A6-9CF5-F04AA3552EED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B702AF81-5943-4CA9-972E-526F110EEFF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B702AF81-5943-4CA9-972E-526F110EEFF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B702AF81-5943-4CA9-972E-526F110EEFF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B702AF81-5943-4CA9-972E-526F110EEFF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A37FEED1-CE17-408C-BF4D-561000B51411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A37FEED1-CE17-408C-BF4D-561000B51411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A37FEED1-CE17-408C-BF4D-561000B51411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A37FEED1-CE17-408C-BF4D-561000B51411}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f0a46c32-3d04-4689-ab93-cef96696dc2c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:7777/HackathonService/Hackathon.Service.ServiceHackathon.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Hackathon.disco" MetadataType="Disco" ID="178b17db-1989-483a-8081-b5bbd4a3e8a8" SourceId="1" SourceUrl="http://desktop-k7g31de:7777/HackathonService/Hackathon.Service.ServiceHackathon.svc?disco" />
+    <MetadataFile FileName="ServiceHackathon.wsdl" MetadataType="Wsdl" ID="27112fba-ae87-4d5e-86c6-dff14dbb993a" SourceId="1" SourceUrl="http://desktop-k7g31de:7777/HackathonService/Hackathon.Service.ServiceHackathon.svc?wsdl" />
+    <MetadataFile FileName="Hackathon.xsd" MetadataType="Schema" ID="7abb5332-16d4-4d41-a992-6b132c23251b" SourceId="1" SourceUrl="http://desktop-k7g31de:7777/HackathonService/Hackathon.Service.ServiceHackathon.svc?xsd=xsd1" />
+    <MetadataFile FileName="Hackathon1.xsd" MetadataType="Schema" ID="e5d72c73-b83b-48b3-8984-2bf9d6212739" SourceId="1" SourceUrl="http://desktop-k7g31de:7777/HackathonService/Hackathon.Service.ServiceHackathon.svc?xsd=xsd2" />
+    <MetadataFile FileName="Hackathon2.xsd" MetadataType="Schema" ID="58e23e0d-c61a-4bb5-8989-af45eacc9043" SourceId="1" SourceUrl="http://desktop-k7g31de:7777/HackathonService/Hackathon.Service.ServiceHackathon.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

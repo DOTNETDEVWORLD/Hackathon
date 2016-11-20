@@ -1,0 +1,47 @@
+﻿
+@model Hackathon.Domain.Page
+@using Hackathon.Domain.Questions;
+
+@{
+    foreach (var question in Model.Questions)
+    {
+       <strong>@Html.Label(question.Libelle) : </strong>
+
+        if (question is QuestionText)
+        {   <div>
+                @Html.TextBox(question.Libelle)
+            </div>
+        }
+
+        if (question is QuestionChoixMultiples)
+        {
+
+            var questionChoixMultiples = question as QuestionChoixMultiples;
+            foreach (var proposition in questionChoixMultiples.Propositions)
+            {
+                <div>
+                    @Html.Label(proposition)
+                    @Html.CheckBox(question.Libelle);
+                </div>
+            }
+        }
+
+        if (question is QuestionChoixUnique)
+        {          
+            var questionChoixMultiples = question as QuestionChoixUnique;
+            foreach (var proposition in questionChoixMultiples.Propositions)
+            {
+                <div>
+                    @Html.Label(proposition)
+                    @Html.RadioButton(question.Libelle, proposition)
+                </div>
+            }
+        }
+
+
+        <br />
+
+
+    }
+    
+}

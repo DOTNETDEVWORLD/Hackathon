@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -56,6 +58,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\Command.cs" />
+    <Compile Include="Service References\ServiceHackathon\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AcceuilView.xaml.cs">
       <DependentUpon>AcceuilView.xaml</DependentUpon>
     </Compile>
@@ -129,6 +136,19 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\ServiceHackathon\Hackathon.ServiceHackathon.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceHackathon\Hackathon.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceHackathon\Hackathon1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceHackathon\Hackathon2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceHackathon\ServiceHackathon.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -163,6 +183,27 @@
     <Resource Include="Content\Images\Cloturer.png" />
     <Resource Include="Content\Images\publish.jpg" />
     <Resource Include="Content\Images\Validate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceHackathon\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceHackathon\Hackathon.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceHackathon\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceHackathon\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceHackathon\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
