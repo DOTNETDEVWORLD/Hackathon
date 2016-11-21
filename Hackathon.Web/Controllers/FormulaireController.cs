@@ -15,9 +15,11 @@ namespace Hackathon.Web.Controllers
         public ActionResult Index()
         {
             var form = new FormulaireModel()
-            {
+            {               
                 Formulaire = new Formulaire()
                 {
+                    Header = new Header() { Libelle = "Formulaire 01" },
+
                     Pages = new List<Page>()
                     {
                         new Page()
@@ -57,17 +59,17 @@ namespace Hackathon.Web.Controllers
 
         public ActionResult FormulairePage()
         {
-            var formulaire = Session["FormulaireModel"] as FormulaireModel;
-            return View(formulaire.CurrentPage);
+            var formulaireModel = Session["FormulaireModel"] as FormulaireModel;
+            return View(formulaireModel.Formulaire.Pages[0]);
         }
 
         public ActionResult PageSuivante(Page page)
         {
             var formulaireModel = Session["FormulaireModel"] as FormulaireModel;
-            formulaireModel.Formulaire.Pages[formulaireModel.CurrentPageNb] = page;
-
-            formulaireModel.CurrentPageNb++;
-            return View(formulaireModel.CurrentPage);
+            formulaireModel.UpdateCurrentPage(page);
+            Session["FormulaireModel"] = formulaireModel;
+           
+            return View(formulaireModel.GetNextPage());
         }
     }
 }

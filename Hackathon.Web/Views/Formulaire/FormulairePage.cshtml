@@ -2,49 +2,40 @@
 @model Hackathon.Domain.Page
 @using Hackathon.Domain.Questions;
 
-
-
 @{
 
     for (int i = 0; i < Model.Questions.Count; i++)
     {
-        @Html.TextBoxFor(x => x.Questions[i].Libelle)
-    }
+        <strong>@Html.Display(Model.Questions[i].Libelle) : </strong>
 
-    @Html.TextBoxFor(x => x.Test)
-
-    foreach (var question in Model.Questions)
-    {
-        <strong>@Html.Label(question.Libelle) : </strong>
-
-        if (question is QuestionText)
-        {   
+        if (Model.Questions[i] is QuestionText)
+        {
             <div>
-                @Html.TextBox(question.Libelle)
+                @Html.TextBox(Model.Questions[i].Libelle)
             </div>
         }
 
-        if (question is QuestionChoixMultiples)
+        if (Model.Questions[i] is QuestionChoixMultiples)
         {
 
-            var questionChoixMultiples = question as QuestionChoixMultiples;
+            var questionChoixMultiples = Model.Questions[i] as QuestionChoixMultiples;
             foreach (var proposition in questionChoixMultiples.Propositions)
             {
                 <div>
                     @Html.Label(proposition)
-                    @Html.CheckBox(question.Libelle)
+                    @Html.CheckBox(Model.Questions[i].Libelle)
                 </div>
             }
         }
 
-        if (question is QuestionChoixUnique)
+        if (Model.Questions[i] is QuestionChoixUnique)
         {
-            var questionChoixMultiples = question as QuestionChoixUnique;
+            var questionChoixMultiples = Model.Questions[i] as QuestionChoixUnique;
             foreach (var proposition in questionChoixMultiples.Propositions)
             {
                 <div>
                     @Html.Label(proposition)
-                    @Html.RadioButton(question.Libelle, proposition)
+                    @Html.RadioButton(Model.Questions[i].Libelle, proposition)
                 </div>
             }
         }

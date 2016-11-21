@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Action.cs" />
     <Compile Include="Formulaire.cs" />
+    <Compile Include="Header.cs" />
     <Compile Include="Messages.cs" />
     <Compile Include="NotificationObject.cs" />
     <Compile Include="Page.cs" />

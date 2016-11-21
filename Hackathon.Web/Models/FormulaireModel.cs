@@ -8,21 +8,27 @@ namespace Hackathon.Web.Models
 {
     public class FormulaireModel
     {
-        public FormulaireModel()
-        {
-            CurrentPageNb = 0;
-        }
+        private int currentPageNumber = 0;      
 
         public Formulaire Formulaire { get; set; }
 
-        public int CurrentPageNb { get; set; }
-
-        public Page CurrentPage
+       
+        public Page GetNextPage()
         {
-            get
-            {
-                return Formulaire.Pages.ToList()[CurrentPageNb];
-            }                
+            currentPageNumber++;
+            return Formulaire.Pages[currentPageNumber];
+        }
+
+
+        public Page GetPreviousPage()
+        {
+            currentPageNumber--;
+            return Formulaire.Pages[currentPageNumber];
+        }
+
+        public void UpdateCurrentPage(Page page)
+        {
+            Formulaire.Pages[currentPageNumber] = page;
         }
     }
 }

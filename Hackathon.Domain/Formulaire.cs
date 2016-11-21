@@ -14,6 +14,8 @@ namespace Hackathon.Domain
             Pages = new List<Page>();
         }
 
+        public Header Header { get; set; }
+
         public long Id { get; set; }
 
         public string Titre { get; set; }
@@ -43,6 +45,9 @@ namespace Hackathon.Domain
        public IList<Reponse> Reponses { get; set; }
 
         public IList<Page> Pages { get; set; }
+
+
+
 
     }
 }
