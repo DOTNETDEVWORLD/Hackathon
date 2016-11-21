@@ -26,20 +26,21 @@ namespace Hackathon.Web.Controllers
                             {
                                 new QuestionText()
                                 {
+                                    Id = 1,
                                     Libelle = "Votre Nom"
                                 },
                                 new QuestionChoixUnique()
                                 {
+                                    Id = 2,
                                     Libelle = "Langue préférée",
                                     Propositions = new List<string>() { "C#", "JAVA", "JAVASCRIPT", "C++" }
-
                                 },
 
-                                 new QuestionChoixMultiples()
+                                new QuestionChoixMultiples()
                                 {
+                                     Id = 3,
                                     Libelle = "Vos loisirs",
                                     Propositions = new List<string>() { "Sport", "Cuisine", "Cinéma", "Voyage" }
-
                                 }
                             }
                         }
@@ -58,6 +59,15 @@ namespace Hackathon.Web.Controllers
         {
             var formulaire = Session["FormulaireModel"] as FormulaireModel;
             return View(formulaire.CurrentPage);
+        }
+
+        public ActionResult PageSuivante(Page page)
+        {
+            var formulaireModel = Session["FormulaireModel"] as FormulaireModel;
+            formulaireModel.Formulaire.Pages[formulaireModel.CurrentPageNb] = page;
+
+            formulaireModel.CurrentPageNb++;
+            return View(formulaireModel.CurrentPage);
         }
     }
 }

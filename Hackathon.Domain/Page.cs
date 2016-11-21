@@ -4,6 +4,8 @@ namespace Hackathon.Domain
 {
     public class Page
     {
-        public ICollection<Question> Questions { get; set; }
+        public IList<Question> Questions { get; set; }
+
+        public string Test { get; set; }
     }
 }

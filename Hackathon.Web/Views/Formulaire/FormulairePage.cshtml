@@ -2,13 +2,24 @@
 @model Hackathon.Domain.Page
 @using Hackathon.Domain.Questions;
 
+
+
 @{
+
+    for (int i = 0; i < Model.Questions.Count; i++)
+    {
+        @Html.TextBoxFor(x => x.Questions[i].Libelle)
+    }
+
+    @Html.TextBoxFor(x => x.Test)
+
     foreach (var question in Model.Questions)
     {
-       <strong>@Html.Label(question.Libelle) : </strong>
+        <strong>@Html.Label(question.Libelle) : </strong>
 
         if (question is QuestionText)
-        {   <div>
+        {   
+            <div>
                 @Html.TextBox(question.Libelle)
             </div>
         }
@@ -27,7 +38,7 @@
         }
 
         if (question is QuestionChoixUnique)
-        {          
+        {
             var questionChoixMultiples = question as QuestionChoixUnique;
             foreach (var proposition in questionChoixMultiples.Propositions)
             {
@@ -38,10 +49,7 @@
             }
         }
 
-
         <br />
-
-
     }
-    
+
 }

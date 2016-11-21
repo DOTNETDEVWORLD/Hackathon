@@ -10,7 +10,7 @@ namespace Hackathon.Domain
     {
         public Formulaire()
         {
-            Reponses = new HashSet<Reponse>();
+            Reponses = new List<Reponse>();
             Pages = new List<Page>();
         }
 
@@ -40,9 +40,9 @@ namespace Hackathon.Domain
             }
         }
 
-       public ICollection<Reponse> Reponses { get; set; }
+       public IList<Reponse> Reponses { get; set; }
 
-        public ICollection<Page> Pages { get; set; }
+        public IList<Page> Pages { get; set; }
 
     }
 }

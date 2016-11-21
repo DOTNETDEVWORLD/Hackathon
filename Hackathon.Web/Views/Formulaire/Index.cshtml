@@ -17,14 +17,22 @@
     <div id="PageContainer">
         @{
             Html.RenderAction("FormulairePage");
-        }
+        }           
+        <input type="button" id="nextPageBtn" value="Page suivante" />       
+      
     </div>
 
+
+
     <script type="text/javascript">
-        $(document).ready(function () {
-            $("#ddlCategory").change(function () {
-                var categoryId = $("#ddlCategory").val();
-                //$("#dvCategoryResults").load();
+        $('#nextPageBtn').click(function () {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("PageSuivante")',
+                data: $('#PageContainer').children().serialize(),
+                success: function (response) {
+                    console.log(response);
+                }
             });
         });
     </script>
