@@ -45,13 +45,38 @@ namespace Hackathon.Web.Controllers
                                     Propositions = new List<string>() { "Sport", "Cuisine", "Cinéma", "Voyage" }
                                 }
                             }
+                        },
+
+                        new Page()
+                        {
+                            Questions = new List<Question>()
+                            {
+                                new QuestionText()
+                                {
+                                    Id = 1,
+                                    Libelle = "Votre Nom 2"
+                                },
+                                new QuestionChoixUnique()
+                                {
+                                    Id = 2,
+                                    Libelle = "Langue préférée 3",
+                                    Propositions = new List<string>() { "C#", "JAVA", "JAVASCRIPT", "C++" }
+                                },
+
+                                new QuestionChoixMultiples()
+                                {
+                                     Id = 3,
+                                    Libelle = "Vos loisirs",
+                                    Propositions = new List<string>() { "Sport", "Cuisine", "Cinéma", "Voyage" }
+                                }
+                            }
                         }
                     }
                 }
 
             };
 
-            Session["FormulaireModel"] = form;
+            Session["FormulaireModel"] = form;         
 
             return View(form);
         }
@@ -63,13 +88,24 @@ namespace Hackathon.Web.Controllers
             return View(formulaireModel.Formulaire.Pages[0]);
         }
 
+        [HttpPost]  
         public ActionResult PageSuivante(Page page)
         {
             var formulaireModel = Session["FormulaireModel"] as FormulaireModel;
-            formulaireModel.UpdateCurrentPage(page);
+            //formulaireModel.UpdateCurrentPage(page);
+            Session["FormulaireModel"] = formulaireModel;                
+
+            return PartialView("FormulairePage", formulaireModel.GetNextPage());
+        }
+
+        [HttpPost]
+        public ActionResult PagePrecedent(Page page)
+        {
+            var formulaireModel = Session["FormulaireModel"] as FormulaireModel;
+            //formulaireModel.UpdateCurrentPage(page);
             Session["FormulaireModel"] = formulaireModel;
-           
-            return View(formulaireModel.GetNextPage());
+
+            return PartialView("FormulairePage", formulaireModel.GetPreviousPage());
         }
     }
 }

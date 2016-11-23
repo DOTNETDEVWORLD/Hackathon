@@ -17,10 +17,35 @@
         @Html.Partial("Header", Model.Formulaire.Header)
     </div>
 
-    <div id="PageContainer">       
-        @{Html.RenderAction("FormulairePage");}                    
-        <input type="button" id="nextPageBtn" value="Page suivante" />      
+    <div>
+        <div id="PageContainer">
+            @{Html.RenderAction("FormulairePage", new ViewDataDictionary(ViewData));}
+
+        </div>
+
+        <input type="button" id="prevPageBtn" value="Page Precedente" />
+        <input type="button" id="nextPageBtn" value="Page suivante" />
+       
+
+
+        @*<div>
+            @if (!Model.IsLastPage)
+            {
+                <input type="button" id="nextPageBtn" value="Page suivante" />
+            }
+            else
+            {
+                <input type="button" id="nextPageBtn" value="Valider" />
+            }
+
+            @if (!Model.IsFirstPage)
+            {
+                <input type="button" id="prevPageBtn" value="Page Precedente" />
+            }
+        </div>*@
     </div>
+
+
 
     <div>
         @Html.Partial("Footer")
@@ -33,10 +58,27 @@
                 url: '@Url.Action("PageSuivante")',
                 data: $('#PageContainer').children().serialize(),
                 success: function (response) {
-                    console.log(response);
+                    $('#PageContainer').html(response);
                 }
             });
         });
+
+
+        $('#prevPageBtn').click(function () {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("PagePrecedent")',
+                data: $('#PageContainer').children().serialize(),
+                success: function (response) {
+                    $('#PageContainer').html(response);
+                }
+            });
+        });
+
+
+        function UpdateButtons() {
+
+        }
     </script>
 </body>
 </html>
